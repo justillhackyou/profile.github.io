@@ -195,10 +195,8 @@
     .brand-copy { min-width: 0; }
     .brand-name {
       display: block;
-      max-width: 350px;
-      overflow: hidden;
+      max-width: none;
       white-space: nowrap;
-      text-overflow: ellipsis;
       color: #f3f5f7;
       font-size: 11px;
       font-weight: 700;
@@ -331,11 +329,14 @@
       margin: 68px 0 25px;
       font-size: clamp(58px, 8vw, 122px);
       line-height: .85;
-      letter-spacing: -.085em;
+      letter-spacing: -.045em;
       font-weight: 600;
+      padding-right: .08em;
     }
     .hero-title .ghost { color: #505a66; }
     .hero-title .gradient {
+      display: inline-block;
+      padding-right: .08em;
       background: linear-gradient(100deg, #fff 12%, #c9d3df 55%, #71808e 95%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -806,6 +807,14 @@
       .system-grid, .profile-grid { grid-template-columns: 1fr; }
     }
 
+    @media (max-width: 960px) and (min-width: 761px) {
+      .brand-sub { display: none; }
+      .brand-name { font-size: 9px; letter-spacing: .025em; }
+      .nav { gap: 0; }
+      .nav a { padding-inline: 7px; font-size: 10px; }
+      .nav .system-id { display: none; }
+    }
+
     @media (max-width: 760px) {
       .page-shell { width: min(100% - 24px, 620px); }
       .topbar-wrap { top: 8px; padding-top: 8px; }
@@ -963,7 +972,7 @@
           <span class="avatar-fallback" hidden>HG</span>
         </span>
         <span class="brand-copy">
-          <span class="brand-name">GOFURJONOV HIKMATULLO MAMURJONOVICH</span>
+          <span class="brand-name">HIKMATULLO GOFURJONOV</span>
           <span class="brand-sub mono">Independent systems / software / hardware</span>
         </span>
       </a>
@@ -1521,7 +1530,7 @@
       function seedParticles() {
         particles.length=0;
         const count=Math.min(75,Math.max(38,Math.round(window.innerWidth/19)));
-        for(let i=0;i<count;i++) particles.push({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,r:Math.random()*1.1+.25,a:Math.random()*.20+.05});
+        for(let i=0;i<count;i++) particles.push({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,r:Math.random()*1.25+.3,a:Math.random()*.16+.24});
       }
       function drawScene(time) {
         if (!ctx || prefersReducedMotion) return;
@@ -1536,7 +1545,7 @@
         }
         for(let i=0;i<particles.length;i++)for(let j=i+1;j<particles.length;j++){
           const a=particles[i],b=particles[j],dist=Math.hypot(a.x-b.x,a.y-b.y); if(dist>110)continue;
-          ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(220,220,220,${(1-dist/110)*.035})`;ctx.lineWidth=1;ctx.stroke();
+          ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(220,220,220,${(1-dist/110)*.055})`;ctx.lineWidth=1;ctx.stroke();
         }
         requestAnimationFrame(drawScene);
       }
