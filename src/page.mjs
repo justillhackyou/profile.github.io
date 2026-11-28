@@ -92,9 +92,9 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
   <link rel="canonical" href="${site}">
   <link rel="icon" href="./assets/portrait.webp" type="image/webp">
   <link rel="preload" href="./assets/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./assets/site.css?v=dock">
+  <link rel="stylesheet" href="./assets/site.css?v=live-glass">
   <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('hikmatullo-theme')==='light'){document.documentElement.dataset.theme='light';document.querySelector('meta[name="theme-color"]').content='#ebe9e8'}}catch{}</script>
-  <script type="module" src="./assets/site.js?v=dock"></script>
+  <script type="module" src="./assets/site.js?v=live-glass"></script>
 </head>
 <body>
   <picture class="wallpaper" aria-hidden="true">

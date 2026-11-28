@@ -31,6 +31,7 @@
   --ribbon-opacity: .87;
   --contact-card: #25263cbd;
   --shadow: 0 9px 28px #06050b5e;
+  --text-shadow: 0 1px 3px #080911, 0 0 16px #080911cc;
   --serif: "Instrument Serif", Georgia, serif;
   --sans: Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 26px;
@@ -60,6 +61,7 @@
   --ribbon-opacity: .82;
   --contact-card: #f9f7f9ce;
   --shadow: 0 9px 28px #1e1b302a;
+  --text-shadow: 0 1px 3px #fff9, 0 0 16px #f5f1f6ed;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -121,7 +123,7 @@ html:not(.js) .js-only { display: none; }
     linear-gradient(90deg, #ebe9e8 0%, #ebe9e8fa 23%, #ebe9e8e8 41%, #ebe9e850 74%, #ebe9e83e),
     linear-gradient(0deg, #ebe9e8 0%, #ebe9e86a 30%, #ebe9e800 66%);
 }
-main { position: relative; }
+main { position: relative; text-shadow: var(--text-shadow); }
 .shell {
   width: min(100% - 2 * var(--inset), var(--shell));
   margin-inline: auto;
@@ -175,6 +177,7 @@ main { position: relative; }
 }
 .optics::after {
   background:
+    linear-gradient(113deg, transparent 36%, #b4d9ff19 45%, #e7f7ff40 50%, #af97ff1c 55%, transparent 65%) left center / 222% 100% no-repeat,
     radial-gradient(ellipse at 14% -18%, #e2f4ff8c, transparent 49%) left top / 143% 51% no-repeat,
     radial-gradient(ellipse at 89% 125%, #b4a0ff69, transparent 57%) right bottom / 135% 46% no-repeat,
     linear-gradient(180deg, transparent, var(--glass-core) 34%, var(--glass-core) 78%, transparent),
@@ -353,13 +356,13 @@ html:not(.js) .navigation { --dock-columns: 5; }
 .identity figcaption span { padding: 0 2px; }
 
 .content {
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
   padding-bottom: var(--dock-clearance);
 }
 .section {
   padding-block: clamp(50px, 7vw, 104px);
   border-top: 1px solid var(--line);
 }
+#work { border-top: 0; }
 .section-heading {
   display: grid;
   grid-template-columns: 1fr minmax(190px, 29%);
@@ -651,8 +654,8 @@ dialog::backdrop { background: #0c0a12a8; }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 @keyframes glass-reflection {
-  0%, 100% { background-position: left top, right bottom, center, center, center; }
-  60% { background-position: right top, left bottom, center, center, center; }
+  from { background-position: left center, left top, right bottom, center, center, center; }
+  to { background-position: right center, right top, left bottom, center, center, center; }
 }
 @keyframes dialog-arrive {
   from { opacity: 0; transform: translateY(10px) scale(.98); }
@@ -664,10 +667,10 @@ dialog::backdrop { background: #0c0a12a8; }
   .hero-intro, .identity { animation-delay: .07s; }
   .hero-actions, .hero-base { animation-delay: .15s; }
   .navigation { animation: dock-arrive .68s cubic-bezier(.22,1,.37,1) both; }
-  .navigation .optics::after, .hero-actions .optics::after {
-    animation: glass-reflection 2.4s .3s ease-in-out 2;
+  .lens .optics::after {
+    animation: glass-reflection 3.6s ease-in-out infinite alternate;
   }
-  .contact-methods[data-revealed] .optics::after { animation: glass-reflection 1.5s ease-in-out; }
+  .action-primary .optics::after { animation-duration: 4.4s; }
   .nav-current { transition: transform .48s cubic-bezier(.2,1.08,.38,1), opacity .2s ease; }
   .navigation a, .theme-switch, .action, .icon-action {
     transition: transform .2s cubic-bezier(.2,.8,.3,1), background-color .2s ease, color .2s ease;
@@ -688,6 +691,7 @@ dialog::backdrop { background: #0c0a12a8; }
     --raised: white;
     --line: #bbb;
     --background: white;
+    --text-shadow: none;
   }
   @page { margin: 15mm; }
   body { font-size: 10pt; }

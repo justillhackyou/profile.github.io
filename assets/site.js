@@ -1,4 +1,4 @@
-import { enableOptics } from './optics.js?v=dock';
+import { enableOptics } from './optics.js?v=live-glass';
 
 const documentRoot = document.documentElement;
 const themeSwitch = document.querySelector('.theme-switch');
