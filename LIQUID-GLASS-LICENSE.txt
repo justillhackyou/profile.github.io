@@ -1,5 +1,5 @@
 Reference: https://github.com/nikdelvin/liquid-glass
-Wallpaper and adapted displacement-map technique.
+Reference for the adapted displacement-map technique.
 
 MIT License
 

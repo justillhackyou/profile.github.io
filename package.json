@@ -1,0 +1,9 @@
+{
+  "name": "hikmatullo.dev",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check && node --check assets/site.js && node --check assets/optics.js"
+  }
+}

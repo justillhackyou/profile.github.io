@@ -1,25 +1,326 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#050505" />
-  <meta name="color-scheme" content="dark light" />
-  <meta name="description" content="Hikmatullo Gofurjonov — first-year Software Engineering student at ITPU, Uzbekistan, and independent systems developer working across software, Android, GSM, and embedded hardware." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#100f14">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Hikmatullo Gofurjonov — first-year Software Engineering student at ITPU, Uzbekistan, and independent systems developer working across software, Android, GSM, and embedded hardware.">
+  <meta property="og:title" content="Hikmatullo Gofurjonov | System Developer">
+  <meta property="og:description" content="Hikmatullo Gofurjonov — first-year Software Engineering student at ITPU, Uzbekistan, and independent systems developer working across software, Android, GSM, and embedded hardware.">
+  <meta property="og:url" content="https://hikmatullo.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://hikmatullo.dev/assets/wallpaper-desktop.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Hikmatullo Gofurjonov | System Developer</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/index-BQTOA0cc.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/vendor-DHz4kLit.js">
-  <link rel="modulepreload" crossorigin href="./assets/three-BdL2qr_a.js">
-  <link rel="stylesheet" crossorigin href="./assets/index-BawAi1Ia.css">
-  <link rel="stylesheet" href="./assets/liquid-theme.css">
-  <script defer src="./assets/liquid-refraction.js"></script>
+  <link rel="canonical" href="https://hikmatullo.dev/">
+  <link rel="icon" href="./assets/portrait.webp" type="image/webp">
+  <link rel="preload" href="./assets/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./assets/site.css">
+  <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('hikmatullo-theme')==='light'){document.documentElement.dataset.theme='light';document.querySelector('meta[name="theme-color"]').content='#ebe9e8'}}catch{}</script>
+  <script type="module" src="./assets/site.js"></script>
 </head>
 <body>
-  <noscript><main><h1>Hikmatullo Gofurjonov</h1><p>System developer and mobile servicing engineer in Uzbekistan. Software Engineering student at IT Park University.</p><p>This portfolio uses JavaScript for interactive projects and 3D. You can contact me on <a href="https://t.me/ill_hack_you">Telegram</a> or explore my <a href="https://github.com/justillhackyou">GitHub projects</a>.</p></main></noscript>
-  <div id="root"></div>
+  <picture class="wallpaper" aria-hidden="true">
+    <source media="(max-width: 680px) and (orientation: portrait)" srcset="./assets/wallpaper-mobile.webp" width="768" height="1178">
+    <img src="./assets/wallpaper-desktop.webp" width="1920" height="1080" alt="" fetchpriority="high">
+  </picture>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <header class="masthead">
+    <div class="header-inner shell">
+      <a class="wordmark" href="#top">hikmatullo<span>.dev</span></a>
+      <nav class="lens navigation" data-lens="navigation" aria-label="Main navigation">
+        <span class="optics" aria-hidden="true"></span>
+        <a href="#work">Work</a><a href="#systems">Systems</a><a href="#social-hub">GitHub</a><a href="#profile">Profile</a><a href="#contact">Contact</a>
+        <button class="theme-switch js-only" type="button" aria-label="Light theme" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="sun"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></g><path class="moon" d="M20.8 15.1A9.1 9.1 0 0 1 8.9 3.2a9.1 9.1 0 1 0 11.9 11.9Z"/></svg></button>
+      </nav>
+    </div>
+  </header>
+  <main id="top" tabindex="-1">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <p class="hero-location eyebrow"><span></span>Fergana, Uzbekistan</p>
+      <h1 id="hero-title">Hikmatullo <br>Gofurjonov</h1>
+      <div class="hero-intro">
+        <p class="profession">System Developer &amp; Mobile Servicing Engineer</p>
+        <p class="intro-copy">I build software, Android tools, and hardware systems in Uzbekistan.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="lens action action-primary" data-lens="action" href="#work"><span class="optics" aria-hidden="true"></span><span class="action-label">Explore my work</span></a>
+        <a class="action action-secondary" href="https://t.me/ill_hack_you" target="_blank" rel="noopener noreferrer">Telegram</a>
+      </div>
+      <div class="hero-base">
+        <p><span class="eyebrow">Education</span><strong>IT Park University</strong><span>Software Engineering, Year 1 of 4</span></p>
+        <p><span class="eyebrow">Focus</span><strong>Software & hardware</strong><span>Android, GSM & embedded systems</span></p>
+      </div>
+      <figure class="identity">
+        <img src="./assets/portrait.webp" alt="Hikmatullo Gofurjonov’s avatar" width="480" height="480" decoding="async">
+        <figcaption>Student <span>·</span> Developer <span>·</span> Security Specialist</figcaption>
+      </figure>
+    </section>
+    <div class="content">
+      <div class="shell">
+        <section id="work" class="section" aria-labelledby="work-title">
+          <header class="section-heading">
+    <div><p class="eyebrow">Portfolio</p><h2 id="work-title">Selected work</h2></div>
+    <p>Desktop utilities, Android servicing, automation, and hands-on hardware research.</p>
+  </header>
+          <div class="projects"><article class="project">
+    <p class="eyebrow">ACTIVE PROJECT</p>
+    <h3>GetRoot</h3>
+    <p class="project-copy">Automated root acquisition, boot image patching, and privilege escalation toolkit engineered for Android devices.</p>
+    <ul class="tags"><li>Android Internals</li><li>ADB / Fastboot</li><li>Rooting</li><li>Shell</li></ul>
+    <a class="text-action" href="#getroot-context" data-project="getroot">View project<span class="sr-only"> — GetRoot</span></a>
+    <section class="project-context" id="getroot-context" aria-label="GetRoot project context">
+      <h4>Project context</h4><ul><li>Automated root privilege escalation</li><li>Boot image patching engine</li><li>Device security research</li></ul>
+    </section>
+  </article>
+<article class="project">
+    <p class="eyebrow">SYSTEM TOOLING</p>
+    <h3>Project Zenith</h3>
+    <p class="project-copy">Comprehensive management platform and high-performance backend infrastructure built with Golang and Python.</p>
+    <ul class="tags"><li>Golang</li><li>Python</li><li>Backend Architecture</li></ul>
+    <a class="text-action" href="#project-zenith-context" data-project="project-zenith">View project<span class="sr-only"> — Project Zenith</span></a>
+    <section class="project-context" id="project-zenith-context" aria-label="Project Zenith project context">
+      <h4>Project context</h4><ul><li>High-concurrency platform architecture</li><li>System management services</li><li>Performance optimization</li></ul>
+    </section>
+  </article>
+<article class="project">
+    <p class="eyebrow">2026 / SERVICE</p>
+    <h3>AFTool &amp; AFT_AUTH</h3>
+    <p class="project-copy">Professional Android servicing suite for automated ADB/Fastboot operations, root management, and secure client-server authentication.</p>
+    <ul class="tags"><li>Python</li><li>C#</li><li>JavaScript</li><li>ADB / Fastboot</li></ul>
+    <a class="text-action" href="#aftool-auth-context" data-project="aftool-auth">View project<span class="sr-only"> — AFTool &amp; AFT_AUTH</span></a>
+    <section class="project-context" id="aftool-auth-context" aria-label="AFTool &amp; AFT_AUTH project context">
+      <h4>Project context</h4><ul><li>Client-server licensing &amp; auth</li><li>Automated ADB operations</li><li>Device management engine</li></ul>
+    </section>
+  </article>
+<article class="project">
+    <p class="eyebrow">DESKTOP SUITE</p>
+    <h3>Root Hider Pro</h3>
+    <p class="project-copy">Desktop application engineered for deep root concealment on Android devices, paired with a custom licensing and key generation system.</p>
+    <ul class="tags"><li>Python</li><li>PyQt6</li><li>Android Internals</li><li>Nuitka</li></ul>
+    <a class="text-action" href="#root-hider-pro-context" data-project="root-hider-pro">View project<span class="sr-only"> — Root Hider Pro</span></a>
+    <section class="project-context" id="root-hider-pro-context" aria-label="Root Hider Pro project context">
+      <h4>Project context</h4><ul><li>Deep root visibility inspection</li><li>Custom licensing &amp; key generation</li><li>Compiled distribution</li></ul>
+    </section>
+  </article>
+<article class="project">
+    <p class="eyebrow">AUTOMATION</p>
+    <h3>UzIMEI Checker Pro</h3>
+    <p class="project-copy">Automated desktop tool featuring a modern dark GUI for high-speed batch IMEI status verification and validation.</p>
+    <ul class="tags"><li>Python</li><li>Playwright</li><li>CustomTkinter</li></ul>
+    <a class="text-action" href="#uzimei-checker-context" data-project="uzimei-checker">View project<span class="sr-only"> — UzIMEI Checker Pro</span></a>
+    <section class="project-context" id="uzimei-checker-context" aria-label="UzIMEI Checker Pro project context">
+      <h4>Project context</h4><ul><li>Batch IMEI validation</li><li>Browser automation pipeline</li><li>CustomTkinter GUI architecture</li></ul>
+    </section>
+  </article>
+<article class="project">
+    <p class="eyebrow">DEVICE TOOLING</p>
+    <h3>AntiCrack &amp; MIUI Installer</h3>
+    <p class="project-copy">Transsion device security parameter inspector &amp; automated native MIUI dialer installer and Google Dialer remover via ADB.</p>
+    <ul class="tags"><li>Python</li><li>C# / .NET</li><li>CustomTkinter</li><li>ADB</li></ul>
+    <a class="text-action" href="#anticrack-miui-context" data-project="anticrack-miui">View project<span class="sr-only"> — AntiCrack &amp; MIUI Installer</span></a>
+    <section class="project-context" id="anticrack-miui-context" aria-label="AntiCrack &amp; MIUI Installer project context">
+      <h4>Project context</h4><ul><li>Transsion security inspection</li><li>MIUI system dialer replacement</li><li>Automated ADB scripts</li></ul>
+    </section>
+  </article>
+<article class="project">
+    <p class="eyebrow">HARDWARE / REPAIR</p>
+    <h3>Hardware &amp; GSM Lab</h3>
+    <p class="project-copy">Raspberry Pi Pico 2 (RP2350) usbliter8 low-level hardware exploits, board-level diagnostic schematics, and specialized GSM servicing.</p>
+    <ul class="tags"><li>RP2350</li><li>UnlockTool</li><li>DFT Pro</li><li>EasyJtag</li><li>Pandora</li></ul>
+    <a class="text-action" href="#hardware-lab-context" data-project="hardware-lab">View project<span class="sr-only"> — Hardware &amp; GSM Lab</span></a>
+    <section class="project-context" id="hardware-lab-context" aria-label="Hardware &amp; GSM Lab project context">
+      <h4>Project context</h4><ul><li>RP2350 USB-PHY research</li><li>Board diagnostics &amp; schematics</li><li>Firmware servicing workflows</li></ul>
+    </section>
+  </article>
+<article class="project">
+    <p class="eyebrow">PROFILE</p>
+    <h3>Background</h3>
+    <p class="project-copy">Student at IT Park University (ITPU), Uzbekistan. First-year Bachelor&#39;s student in Software Engineering, building practical experience across software, Android, and device-service engineering.</p>
+    <ul class="tags"><li>Software Engineering</li><li>UzBMB Math / Physics</li></ul>
+    <a class="text-action" href="#background-education-context" data-project="background-education">View project<span class="sr-only"> — Background</span></a>
+    <section class="project-context" id="background-education-context" aria-label="Background project context">
+      <h4>Project context</h4><ul><li>First-year Bachelor&#39;s student at ITPU</li><li>Software Engineering specialty</li><li>Practical device &amp; hardware focus</li></ul>
+    </section>
+  </article></div>
+        </section>
+        <section id="systems" class="section" aria-labelledby="systems-title">
+          <header class="section-heading">
+    <div><p class="eyebrow">Technical skills</p><h2 id="systems-title">Tools & systems</h2></div>
+    <p>Languages, interfaces, Android internals, and embedded experimentation.</p>
+  </header>
+          <div class="columns systems-columns">
+            <div><h3>Languages & core focus</h3><ul class="tags"><li>Python</li><li>C# / .NET 10</li><li>Golang</li><li>C / C++</li><li>Kotlin</li><li>AutoHotkey v2</li><li>Reverse Engineering</li><li>ADB / Fastboot</li><li>KernelSU / Zygisk</li><li>WPF / CustomTkinter / PyQt6</li></ul></div>
+            <div><h3>Engineering toolkit</h3>
+              <dl class="specs">
+                <div><dt>Desktop & systems</dt><dd>.NET 10, WPF, C#, Python, system tooling</dd></div>
+                <div><dt>Android internals</dt><dd>Kernel compilation, custom ROMs, KernelSU, Fastboot</dd></div>
+                <div><dt>GSM & device service</dt><dd>Firmware operations, schematics diagnostics, FRP & bypass</dd></div>
+                <div><dt>Embedded hardware lab</dt><dd>Raspberry Pi Pico 2 (RP2350), USB-PHY, usbliter8, hardware auditing</dd></div>
+              </dl>
+            </div>
+          </div>
+          <h3 class="subheading">Engineering timeline</h3>
+          <ol class="timeline"><li><span class="eyebrow">2026 / Q1</span><h4>Mobile utilities &amp; GetRoot</h4><p>AFTool, AFT_AUTH, and Android-oriented root acquisition workflows spanning Kotlin, C#, Python, and device automation.</p></li><li><span class="eyebrow">2026 / Q2</span><h4>System tooling &amp; Project Zenith</h4><p>Golang backend infrastructure, desktop utilities, ADB service workflows, and Android kernel / ROM experimentation.</p></li><li><span class="eyebrow">2026 / Q3</span><h4>Automation &amp; Hardware Research</h4><p>UzIMEI Checker batch pipeline, RP2350 usbliter8 hardware exploitation, and Transsion AntiCrack tooling.</p></li></ol>
+        </section>
+        <section id="social-hub" class="section" aria-labelledby="github-title">
+          <header class="section-heading">
+    <div><p class="eyebrow">Open source</p><h2 id="github-title">GitHub</h2></div>
+    <p>Browse public repositories and look up GitHub profiles.</p>
+  </header>
+          <div class="github">
+            <div class="github-head">
+              <div><h3>GitHub profile</h3><a class="text-action" href="https://github.com/justillhackyou" target="_blank" rel="noopener noreferrer">@justillhackyou</a></div>
+              <form class="github-form js-only" id="github-form">
+                <label class="sr-only" for="github-user">GitHub username</label>
+                <input id="github-user" name="username" value="justillhackyou" maxlength="39" required autocomplete="off" autocapitalize="off" spellcheck="false">
+                <button class="action action-secondary" type="submit">Search</button>
+              </form>
+            </div>
+            <p id="github-status" role="status" class="feedback"></p>
+            <div id="github-results"></div>
+          </div>
+          <div class="social-note">
+            <p>Follow hardware, device lab, and student life updates on <a class="" href="https://instagram.com/mr_hikmatullo_" target="_blank" rel="noopener noreferrer">Instagram</a>. Reach me directly on <a class="" href="https://t.me/ill_hack_you" target="_blank" rel="noopener noreferrer">Telegram</a>.</p>
+          </div>
+        </section>
+        <section id="profile" class="section" aria-labelledby="profile-title">
+          <header class="section-heading">
+    <div><p class="eyebrow">Education & profile</p><h2 id="profile-title">Beyond the work</h2></div>
+    <p>Academic foundation, working environment, spoken languages, and personal interests.</p>
+  </header>
+          <div class="columns">
+            <div>
+              <h3>Background & academics</h3>
+              <p>Undergraduate Student at IT Park University (ITPU) — Year 1/4 (19 y.o.). Building high-performance software in Python, C#, Go, and C, with practical board-level device servicing and firmware engineering.</p>
+              <p>Fergana, Uzbekistan 🇺🇿 · Student · Developer · Security Specialist</p>
+              <h4>Spoken languages & fluency</h4><ul class="tags"><li>Russian · C2</li><li>Uzbek · C2</li><li>Tajik · C2</li><li>English · B2</li><li>Kyrgyz · B1</li><li>Turkish · A2</li></ul>
+            </div>
+            <div>
+              <h3>Hardware rig & environment</h3>
+              <dl class="specs"><div><dt>Poco F7 Ultra (Redmi K80 Pro)</dt><dd>Primary development &amp; modding testbed</dd></div><div><dt>Xiaomi 12</dt><dd>Custom ROM testbed (LineageOS / Axion / InfinityX)</dd></div><div><dt>Raspberry Pi Pico 2 (RP2350)</dt><dd>Embedded USB-PHY &amp; usbliter8 research</dd></div><div><dt>JCID V1SE</dt><dd>Hardware programmer &amp; board diagnostics</dd></div></dl>
+              <h4>Operating systems</h4><ul class="tags"><li>Windows 11</li><li>Parrot OS</li><li>Arch Linux</li><li>Zorin OS</li></ul>
+              <h4>GSM & board repair tools</h4><ul class="tags"><li>EasyJtag Plus</li><li>Chimera Tool</li><li>UnlockTool</li><li>DFT Pro</li><li>Pandora Box</li><li>SP Flash / QFIL / Odin4</li></ul>
+            </div>
+          </div>
+          <div class="perspective">
+            <div><h3>Aesthetics, gaming & the Dark Forest</h3>
+              <dl class="specs"><div><dt>Engineering &amp; Internals</dt><dd>System architecture, tooling, Android kernels, custom ROMs (Axion/InfinityX), and low-level experimentation.</dd></div><div><dt>Visual Aesthetics</dt><dd>Techwear, Cyberpunk, and Dark Minimalism with emerald, cyan, and violet accents.</dd></div><div><dt>Gaming &amp; Strategy</dt><dd>Warcraft III: Reforged (Angel Arena, Tank Wars), Terraria, Prototype 1-2, PUBG Mobile.</dd></div></dl>
+            </div>
+            <figure><blockquote>“The universe is a dark forest. Every civilization is an armed hunter stalking through the trees like a ghost, gently pushing aside branches that block the path and trying to tread without sound...”</blockquote><figcaption>The Fermi Paradox &amp; Dark Forest Theory</figcaption></figure>
+          </div>
+        </section>
+        <section id="contact" class="section contact" aria-labelledby="contact-title">
+          <header class="section-heading">
+    <div><p class="eyebrow">Contact</p><h2 id="contact-title">Get in touch</h2></div>
+    <p>Direct channels for engineering, device service inquiries, and project collaboration.</p>
+  </header>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <div><p class="eyebrow">Telegram</p>
+                <a class="contact-value" href="https://t.me/ill_hack_you" target="_blank" rel="noopener noreferrer">@ill_hack_you</a>
+                <p>Primary messaging</p>
+              </div>
+              <button class="icon-action js-only" type="button" data-copy="@ill_hack_you" aria-label="Copy Telegram contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+            </div><div class="contact-item">
+              <div><p class="eyebrow">GitHub</p>
+                <a class="contact-value" href="https://github.com/justillhackyou" target="_blank" rel="noopener noreferrer">@justillhackyou</a>
+                <p>Repositories & open source</p>
+              </div>
+              <button class="icon-action js-only" type="button" data-copy="@justillhackyou" aria-label="Copy GitHub contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+            </div><div class="contact-item">
+              <div><p class="eyebrow">Instagram</p>
+                <a class="contact-value" href="https://instagram.com/mr_hikmatullo_" target="_blank" rel="noopener noreferrer">@mr_hikmatullo_</a>
+                <p>Hardware photos & mobile updates</p>
+              </div>
+              <button class="icon-action js-only" type="button" data-copy="@mr_hikmatullo_" aria-label="Copy Instagram contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+            </div><div class="contact-item">
+              <div><p class="eyebrow">Phone</p>
+                <a class="contact-value" href="tel:+998951419836">+998 95 141 98 36</a>
+                <p>Direct mobile contact</p>
+              </div>
+              <button class="icon-action js-only" type="button" data-copy="+998 95 141 98 36" aria-label="Copy Phone contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+            </div>
+          </div>
+          <div class="contact-toolbar">
+            <a class="action action-secondary" href="./assets/hikmatullo-gofurjonov.vcf" download>Save contact</a>
+            <button class="action action-secondary js-only" type="button" data-share>Share site</button>
+            <button class="action action-secondary js-only" type="button" data-print>Print résumé</button>
+            <details class="contact-qr">
+              <summary class="action action-secondary">Telegram QR</summary>
+              <figure><img src="./assets/telegram-qr.png" alt="QR code for Telegram at @ill_hack_you" width="144" height="144" loading="lazy"><figcaption>Scan to chat on Telegram</figcaption></figure>
+            </details>
+          </div>
+          <p class="feedback" id="contact-status" role="status"></p>
+        </section>
+        <footer class="footer">
+          <p>© <span data-year>2026</span> Hikmatullo Gofurjonov</p>
+          <a class="" href="https://unsplash.com/photos/abstract-glass-structure-with-iridescent-light-reflections-sC2Twgvu3lg" target="_blank" rel="noopener noreferrer">Photography by Rohit Choudhari</a>
+          <a href="#top">Back to top</a>
+        </footer>
+      </div>
+    </div>
+  </main>
+  <dialog id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-bar"><form method="dialog"><button class="icon-action" aria-label="Close project details" autofocus><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></form></div>
+    <div class="dialog-body"></div>
+  </dialog>
+  <template id="dialog-getroot">
+    <p class="eyebrow">ACTIVE PROJECT</p>
+    <h2 id="dialog-title">GetRoot</h2>
+    <p>Automated root acquisition, boot image patching, and privilege escalation toolkit engineered for Android devices.</p>
+    <h3>Recorded stack</h3><ul class="tags"><li>Android Internals</li><li>ADB / Fastboot</li><li>Rooting</li><li>Shell</li></ul>
+    <h3>Project context</h3><ul class="context-list"><li>Automated root privilege escalation</li><li>Boot image patching engine</li><li>Device security research</li></ul>
+  </template>
+<template id="dialog-project-zenith">
+    <p class="eyebrow">SYSTEM TOOLING</p>
+    <h2 id="dialog-title">Project Zenith</h2>
+    <p>Comprehensive management platform and high-performance backend infrastructure built with Golang and Python.</p>
+    <h3>Recorded stack</h3><ul class="tags"><li>Golang</li><li>Python</li><li>Backend Architecture</li></ul>
+    <h3>Project context</h3><ul class="context-list"><li>High-concurrency platform architecture</li><li>System management services</li><li>Performance optimization</li></ul>
+  </template>
+<template id="dialog-aftool-auth">
+    <p class="eyebrow">2026 / SERVICE</p>
+    <h2 id="dialog-title">AFTool &amp; AFT_AUTH</h2>
+    <p>Professional Android servicing suite for automated ADB/Fastboot operations, root management, and secure client-server authentication.</p>
+    <h3>Recorded stack</h3><ul class="tags"><li>Python</li><li>C#</li><li>JavaScript</li><li>ADB / Fastboot</li></ul>
+    <h3>Project context</h3><ul class="context-list"><li>Client-server licensing &amp; auth</li><li>Automated ADB operations</li><li>Device management engine</li></ul>
+  </template>
+<template id="dialog-root-hider-pro">
+    <p class="eyebrow">DESKTOP SUITE</p>
+    <h2 id="dialog-title">Root Hider Pro</h2>
+    <p>Desktop application engineered for deep root concealment on Android devices, paired with a custom licensing and key generation system.</p>
+    <h3>Recorded stack</h3><ul class="tags"><li>Python</li><li>PyQt6</li><li>Android Internals</li><li>Nuitka</li></ul>
+    <h3>Project context</h3><ul class="context-list"><li>Deep root visibility inspection</li><li>Custom licensing &amp; key generation</li><li>Compiled distribution</li></ul>
+  </template>
+<template id="dialog-uzimei-checker">
+    <p class="eyebrow">AUTOMATION</p>
+    <h2 id="dialog-title">UzIMEI Checker Pro</h2>
+    <p>Automated desktop tool featuring a modern dark GUI for high-speed batch IMEI status verification and validation.</p>
+    <h3>Recorded stack</h3><ul class="tags"><li>Python</li><li>Playwright</li><li>CustomTkinter</li></ul>
+    <h3>Project context</h3><ul class="context-list"><li>Batch IMEI validation</li><li>Browser automation pipeline</li><li>CustomTkinter GUI architecture</li></ul>
+  </template>
+<template id="dialog-anticrack-miui">
+    <p class="eyebrow">DEVICE TOOLING</p>
+    <h2 id="dialog-title">AntiCrack &amp; MIUI Installer</h2>
+    <p>Transsion device security parameter inspector &amp; automated native MIUI dialer installer and Google Dialer remover via ADB.</p>
+    <h3>Recorded stack</h3><ul class="tags"><li>Python</li><li>C# / .NET</li><li>CustomTkinter</li><li>ADB</li></ul>
+    <h3>Project context</h3><ul class="context-list"><li>Transsion security inspection</li><li>MIUI system dialer replacement</li><li>Automated ADB scripts</li></ul>
+  </template>
+<template id="dialog-hardware-lab">
+    <p class="eyebrow">HARDWARE / REPAIR</p>
+    <h2 id="dialog-title">Hardware &amp; GSM Lab</h2>
+    <p>Raspberry Pi Pico 2 (RP2350) usbliter8 low-level hardware exploits, board-level diagnostic schematics, and specialized GSM servicing.</p>
+    <h3>Recorded stack</h3><ul class="tags"><li>RP2350</li><li>UnlockTool</li><li>DFT Pro</li><li>EasyJtag</li><li>Pandora</li></ul>
+    <h3>Project context</h3><ul class="context-list"><li>RP2350 USB-PHY research</li><li>Board diagnostics &amp; schematics</li><li>Firmware servicing workflows</li></ul>
+  </template>
+<template id="dialog-background-education">
+    <p class="eyebrow">PROFILE</p>
+    <h2 id="dialog-title">Background</h2>
+    <p>Student at IT Park University (ITPU), Uzbekistan. First-year Bachelor&#39;s student in Software Engineering, building practical experience across software, Android, and device-service engineering.</p>
+    <h3>Recorded stack</h3><ul class="tags"><li>Software Engineering</li><li>UzBMB Math / Physics</li></ul>
+    <h3>Project context</h3><ul class="context-list"><li>First-year Bachelor&#39;s student at ITPU</li><li>Software Engineering specialty</li><li>Practical device &amp; hardware focus</li></ul>
+  </template>
 </body>
 </html>

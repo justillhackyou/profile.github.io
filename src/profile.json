@@ -1,0 +1,243 @@
+{
+  "profile": {
+    "name": "Hikmatullo Gofurjonov",
+    "title": "System Developer & Mobile Servicing Engineer",
+    "role": "Student · Developer · Security Specialist",
+    "age": 19,
+    "base": "Fergana, Uzbekistan 🇺🇿",
+    "academicDetails": "Undergraduate Student at IT Park University (ITPU) — Year 1/4 (19 y.o.). Building high-performance software in Python, C#, Go, and C, with practical board-level device servicing and firmware engineering."
+  },
+  "hardware": {
+    "devices": [
+      {
+        "name": "Poco F7 Ultra (Redmi K80 Pro)",
+        "role": "Primary development & modding testbed"
+      },
+      {
+        "name": "Xiaomi 12",
+        "role": "Custom ROM testbed (LineageOS / Axion / InfinityX)"
+      },
+      {
+        "name": "Raspberry Pi Pico 2 (RP2350)",
+        "role": "Embedded USB-PHY & usbliter8 research"
+      },
+      {
+        "name": "JCID V1SE",
+        "role": "Hardware programmer & board diagnostics"
+      }
+    ],
+    "operatingSystems": [
+      "Windows 11",
+      "Parrot OS",
+      "Arch Linux",
+      "Zorin OS"
+    ],
+    "gsmArsenal": [
+      "EasyJtag Plus",
+      "Chimera Tool",
+      "UnlockTool",
+      "DFT Pro",
+      "Pandora Box",
+      "SP Flash / QFIL / Odin4"
+    ]
+  },
+  "perspective": {
+    "philosophyQuote": "The universe is a dark forest. Every civilization is an armed hunter stalking through the trees like a ghost, gently pushing aside branches that block the path and trying to tread without sound...",
+    "philosophyAuthor": "The Fermi Paradox & Dark Forest Theory"
+  },
+  "projects": [
+    {
+      "id": "getroot",
+      "title": "GetRoot",
+      "description": "Automated root acquisition, boot image patching, and privilege escalation toolkit engineered for Android devices.",
+      "tags": [
+        "Android Internals",
+        "ADB / Fastboot",
+        "Rooting",
+        "Shell"
+      ],
+      "date": "ACTIVE PROJECT",
+      "context": [
+        "Automated root privilege escalation",
+        "Boot image patching engine",
+        "Device security research"
+      ]
+    },
+    {
+      "id": "project-zenith",
+      "title": "Project Zenith",
+      "description": "Comprehensive management platform and high-performance backend infrastructure built with Golang and Python.",
+      "tags": [
+        "Golang",
+        "Python",
+        "Backend Architecture"
+      ],
+      "date": "SYSTEM TOOLING",
+      "context": [
+        "High-concurrency platform architecture",
+        "System management services",
+        "Performance optimization"
+      ]
+    },
+    {
+      "id": "aftool-auth",
+      "title": "AFTool & AFT_AUTH",
+      "description": "Professional Android servicing suite for automated ADB/Fastboot operations, root management, and secure client-server authentication.",
+      "tags": [
+        "Python",
+        "C#",
+        "JavaScript",
+        "ADB / Fastboot"
+      ],
+      "date": "2026 / SERVICE",
+      "context": [
+        "Client-server licensing & auth",
+        "Automated ADB operations",
+        "Device management engine"
+      ]
+    },
+    {
+      "id": "root-hider-pro",
+      "title": "Root Hider Pro",
+      "description": "Desktop application engineered for deep root concealment on Android devices, paired with a custom licensing and key generation system.",
+      "tags": [
+        "Python",
+        "PyQt6",
+        "Android Internals",
+        "Nuitka"
+      ],
+      "date": "DESKTOP SUITE",
+      "context": [
+        "Deep root visibility inspection",
+        "Custom licensing & key generation",
+        "Compiled distribution"
+      ]
+    },
+    {
+      "id": "uzimei-checker",
+      "title": "UzIMEI Checker Pro",
+      "description": "Automated desktop tool featuring a modern dark GUI for high-speed batch IMEI status verification and validation.",
+      "tags": [
+        "Python",
+        "Playwright",
+        "CustomTkinter"
+      ],
+      "date": "AUTOMATION",
+      "context": [
+        "Batch IMEI validation",
+        "Browser automation pipeline",
+        "CustomTkinter GUI architecture"
+      ]
+    },
+    {
+      "id": "anticrack-miui",
+      "title": "AntiCrack & MIUI Installer",
+      "description": "Transsion device security parameter inspector & automated native MIUI dialer installer and Google Dialer remover via ADB.",
+      "tags": [
+        "Python",
+        "C# / .NET",
+        "CustomTkinter",
+        "ADB"
+      ],
+      "date": "DEVICE TOOLING",
+      "context": [
+        "Transsion security inspection",
+        "MIUI system dialer replacement",
+        "Automated ADB scripts"
+      ]
+    },
+    {
+      "id": "hardware-lab",
+      "title": "Hardware & GSM Lab",
+      "description": "Raspberry Pi Pico 2 (RP2350) usbliter8 low-level hardware exploits, board-level diagnostic schematics, and specialized GSM servicing.",
+      "tags": [
+        "RP2350",
+        "UnlockTool",
+        "DFT Pro",
+        "EasyJtag",
+        "Pandora"
+      ],
+      "date": "HARDWARE / REPAIR",
+      "context": [
+        "RP2350 USB-PHY research",
+        "Board diagnostics & schematics",
+        "Firmware servicing workflows"
+      ]
+    },
+    {
+      "id": "background-education",
+      "title": "Background",
+      "description": "Student at IT Park University (ITPU), Uzbekistan. First-year Bachelor's student in Software Engineering, building practical experience across software, Android, and device-service engineering.",
+      "tags": [
+        "Software Engineering",
+        "UzBMB Math / Physics"
+      ],
+      "date": "PROFILE",
+      "context": [
+        "First-year Bachelor's student at ITPU",
+        "Software Engineering specialty",
+        "Practical device & hardware focus"
+      ]
+    }
+  ],
+  "skills": [
+    "Python",
+    "C# / .NET 10",
+    "Golang",
+    "C / C++",
+    "Kotlin",
+    "AutoHotkey v2",
+    "Reverse Engineering",
+    "ADB / Fastboot",
+    "KernelSU / Zygisk",
+    "WPF / CustomTkinter / PyQt6"
+  ],
+  "timeline": [
+    {
+      "year": "2026 / Q1",
+      "title": "Mobile utilities & GetRoot",
+      "copy": "AFTool, AFT_AUTH, and Android-oriented root acquisition workflows spanning Kotlin, C#, Python, and device automation."
+    },
+    {
+      "year": "2026 / Q2",
+      "title": "System tooling & Project Zenith",
+      "copy": "Golang backend infrastructure, desktop utilities, ADB service workflows, and Android kernel / ROM experimentation."
+    },
+    {
+      "year": "2026 / Q3",
+      "title": "Automation & Hardware Research",
+      "copy": "UzIMEI Checker batch pipeline, RP2350 usbliter8 hardware exploitation, and Transsion AntiCrack tooling."
+    }
+  ],
+  "languages": [
+    "Russian · C2",
+    "Uzbek · C2",
+    "Tajik · C2",
+    "English · B2",
+    "Kyrgyz · B1",
+    "Turkish · A2"
+  ],
+  "interests": [
+    {
+      "title": "Engineering & Internals",
+      "copy": "System architecture, tooling, Android kernels, custom ROMs (Axion/InfinityX), and low-level experimentation."
+    },
+    {
+      "title": "Visual Aesthetics",
+      "copy": "Techwear, Cyberpunk, and Dark Minimalism with emerald, cyan, and violet accents."
+    },
+    {
+      "title": "Gaming & Strategy",
+      "copy": "Warcraft III: Reforged (Angel Arena, Tank Wars), Terraria, Prototype 1-2, PUBG Mobile."
+    }
+  ],
+  "contact": {
+    "phone": "+998 95 141 98 36",
+    "telegram": "@ill_hack_you",
+    "telegramUrl": "https://t.me/ill_hack_you",
+    "instagram": "@mr_hikmatullo_",
+    "instagramUrl": "https://instagram.com/mr_hikmatullo_",
+    "github": "justillhackyou",
+    "githubUrl": "https://github.com/justillhackyou"
+  }
+}
