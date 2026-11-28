@@ -10,12 +10,32 @@ const svg = paths => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 const icons = {
   theme: svg('<g class="sun"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></g><path class="moon" d="M20.8 15.1A9.1 9.1 0 0 1 8.9 3.2a9.1 9.1 0 1 0 11.9 11.9Z"/>'),
   close: svg('<path d="m6 6 12 12M18 6 6 18"/>'),
-  copy: svg('<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>')
+  copy: svg('<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>'),
+  work: svg('<rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M3 13a19 19 0 0 0 18 0"/>'),
+  systems: svg('<rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3m6-3v3M9 18v3m6-3v3M3 9h3m-3 6h3m12-6h3m-3 6h3"/>'),
+  'social-hub': svg('<path d="M9 19c-4 1.2-4-2-5.5-2.5M15 22v-3.2a2.8 2.8 0 0 0-.8-2.1c2.8-.3 5.8-1.4 5.8-6.2a4.7 4.7 0 0 0-1.3-3.3A4.4 4.4 0 0 0 18.6 4s-1.1-.3-3.6 1.3a12.5 12.5 0 0 0-6 0C6.5 3.7 5.4 4 5.4 4a4.4 4.4 0 0 0-.1 3.2A4.7 4.7 0 0 0 4 10.5c0 4.8 3 5.9 5.8 6.2A2.8 2.8 0 0 0 9 18.8V22"/>'),
+  profile: svg('<circle cx="12" cy="8" r="3.2"/><path d="M5 20v-1a4.6 4.6 0 0 1 4.6-4.6h4.8A4.6 4.6 0 0 1 19 19v1"/>'),
+  contact: svg('<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4.5 7 7.5 6 7.5-6"/>'),
+  telegram: svg('<path d="m3 11 18-7-4 16-5-4-3 2v-5l8-6-10 5-4-1Z"/>'),
+  instagram: svg('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/>'),
+  phone: svg('<path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a12 12 0 0 1-6-6l2-2-2-5Z"/>'),
+  save: svg('<path d="M12 3v12m-4-4 4 4 4-4M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/>'),
+  share: svg('<circle cx="18" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="19" r="2"/><path d="m8 11 8-5M8 13l8 5"/>'),
+  print: svg('<path d="M7 8V3h10v5M7 17H4v-7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7h-3M7 14h10v7H7z"/>'),
+  qr: svg('<path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h3v3h3m-6 3v-3m6-3v-1"/>')
 };
 const navigation = [
   ['work', 'Work'], ['systems', 'Systems'], ['social-hub', 'GitHub'],
   ['profile', 'Profile'], ['contact', 'Contact']
 ];
+
+const optics = `<span class="optics" aria-hidden="true">
+  <svg class="lens-sample" width="100%" height="100%" focusable="false">
+    <image href="./assets/glass-ribbon.webp" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+  </svg>
+</span>`;
+
+const copyContact = (label, value) => `<button class="icon-action js-only" type="button" data-copy="${html(value)}" aria-label="Copy ${label} contact">${icons.copy}</button>`;
 
 function project(project) {
   return `<article class="project">
@@ -50,10 +70,9 @@ function sectionHeading(id, label, title, copy) {
 export function renderPage({ profile, hardware, perspective, projects, skills, timeline, languages, interests, contact }) {
   const phone = contact.phone.replace(/\s/g, '');
   const channels = [
-    ['Telegram', contact.telegram, contact.telegramUrl, 'Primary messaging'],
-    ['GitHub', '@' + contact.github, contact.githubUrl, 'Repositories & open source'],
-    ['Instagram', contact.instagram, contact.instagramUrl, 'Hardware photos & mobile updates'],
-    ['Phone', contact.phone, 'tel:' + phone, 'Direct mobile contact']
+    ['GitHub', '@' + contact.github, contact.githubUrl, icons['social-hub']],
+    ['Instagram', contact.instagram, contact.instagramUrl, icons.instagram],
+    ['Phone', contact.phone, 'tel:' + phone, icons.phone]
   ];
   return `<!doctype html>
 <html lang="en">
@@ -73,26 +92,25 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
   <link rel="canonical" href="${site}">
   <link rel="icon" href="./assets/portrait.webp" type="image/webp">
   <link rel="preload" href="./assets/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./assets/site.css">
+  <link rel="stylesheet" href="./assets/site.css?v=dock">
   <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('hikmatullo-theme')==='light'){document.documentElement.dataset.theme='light';document.querySelector('meta[name="theme-color"]').content='#ebe9e8'}}catch{}</script>
-  <script type="module" src="./assets/site.js"></script>
+  <script type="module" src="./assets/site.js?v=dock"></script>
 </head>
 <body>
   <picture class="wallpaper" aria-hidden="true">
-    <source media="(max-width: 680px) and (orientation: portrait)" srcset="./assets/wallpaper-mobile.webp" width="768" height="1178">
-    <img src="./assets/wallpaper-desktop.webp" width="1920" height="1080" alt="" fetchpriority="high">
+    <source media="(max-width: 680px) and (orientation: portrait)" srcset="./assets/wallpaper-mobile.webp?v=dock" width="1440" height="2160">
+    <img src="./assets/wallpaper-desktop.webp?v=dock" width="3840" height="2160" alt="" fetchpriority="high">
   </picture>
   <a class="skip-link" href="#top">Skip to content</a>
-  <header class="masthead">
-    <div class="header-inner shell">
-      <a class="wordmark" href="#top">hikmatullo<span>.dev</span></a>
-      <nav class="lens navigation" data-lens="navigation" aria-label="Main navigation">
-        <span class="optics" aria-hidden="true"></span>
-        ${navigation.map(([id, label]) => `<a href="#${id}">${label}</a>`).join('')}
-        <button class="theme-switch js-only" type="button" aria-label="Light theme" aria-pressed="false">${icons.theme}</button>
-      </nav>
-    </div>
+  <header class="masthead shell">
+    <a class="wordmark" href="#top">hikmatullo<span>.dev</span></a>
   </header>
+  <nav class="lens navigation" data-lens="navigation" aria-label="Main navigation">
+    ${optics}
+    <span class="nav-current" aria-hidden="true"></span>
+    ${navigation.map(([id, label]) => `<a href="#${id}">${icons[id]}<span>${label}</span></a>`).join('')}
+    <button class="theme-switch js-only" type="button" aria-label="Light theme" aria-pressed="false">${icons.theme}</button>
+  </nav>
   <main id="top" tabindex="-1">
     <section class="hero shell" aria-labelledby="hero-title">
       <p class="hero-location eyebrow"><span></span>Fergana, Uzbekistan</p>
@@ -102,7 +120,7 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
         <p class="intro-copy">I build software, Android tools, and hardware systems in Uzbekistan.</p>
       </div>
       <div class="hero-actions">
-        <a class="lens action action-primary" data-lens="action" href="#work"><span class="optics" aria-hidden="true"></span><span class="action-label">Explore my work</span></a>
+        <a class="lens action action-primary" data-lens="work" href="#work">${optics}<span class="action-label">Explore my work</span></a>
         ${external(contact.telegramUrl, 'Telegram', 'action action-secondary')}
       </div>
       <div class="hero-base">
@@ -178,22 +196,32 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
           </div>
         </section>
         <section id="contact" class="section contact" aria-labelledby="contact-title">
-          ${sectionHeading('contact-title', 'Contact', 'Get in touch', 'Direct channels for engineering, device service inquiries, and project collaboration.')}
-          <div class="contact-grid">
-            ${channels.map(([label, value, url, note]) => `<div class="contact-item">
-              <div><p class="eyebrow">${label}</p>
-                ${url.startsWith('tel:') ? `<a class="contact-value" href="${html(url)}">${html(value)}</a>` : external(url, value, 'contact-value')}
-                <p>${note}</p>
+          ${sectionHeading('contact-title', 'Contact', 'Get in touch', 'For engineering, device servicing, and project collaborations.')}
+          <div class="contact-methods">
+            <div class="contact-feature">
+              <div class="contact-feature-head">
+                <span class="contact-channel-icon">${icons.telegram}</span>
+                <div><h3>Telegram</h3><p>${html(contact.telegram)}</p></div>
+                ${copyContact('Telegram', contact.telegram)}
               </div>
-              <button class="icon-action js-only" type="button" data-copy="${html(value)}" aria-label="Copy ${label} contact">${icons.copy}</button>
-            </div>`).join('')}
+              <a class="lens action action-primary contact-primary" data-lens="telegram" href="${html(contact.telegramUrl)}" target="_blank" rel="noopener noreferrer">${optics}<span class="action-label">Message on Telegram</span></a>
+            </div>
+            <div class="contact-grid">
+              ${channels.map(([label, value, url, icon]) => `<div class="contact-item">
+                <a class="contact-value" href="${html(url)}"${url.startsWith('tel:') ? '' : ' target="_blank" rel="noopener noreferrer"'}>
+                  <span class="contact-channel-icon">${icon}</span>
+                  <span><strong>${label}</strong><span>${html(value)}</span></span>
+                </a>
+                ${copyContact(label, value)}
+              </div>`).join('')}
+            </div>
           </div>
           <div class="contact-toolbar">
-            <a class="action action-secondary" href="./assets/hikmatullo-gofurjonov.vcf" download>Save contact</a>
-            <button class="action action-secondary js-only" type="button" data-share>Share site</button>
-            <button class="action action-secondary js-only" type="button" data-print>Print résumé</button>
+            <a class="action action-secondary" href="./assets/hikmatullo-gofurjonov.vcf" download>${icons.save}Save contact</a>
+            <button class="action action-secondary js-only" type="button" data-share>${icons.share}Share site</button>
+            <button class="action action-secondary js-only" type="button" data-print>${icons.print}Print résumé</button>
             <details class="contact-qr">
-              <summary class="action action-secondary">Telegram QR</summary>
+              <summary class="action action-secondary">${icons.qr}Telegram QR</summary>
               <figure><img src="./assets/telegram-qr.png" alt="QR code for Telegram at ${html(contact.telegram)}" width="144" height="144" loading="lazy"><figcaption>Scan to chat on Telegram</figcaption></figure>
             </details>
           </div>

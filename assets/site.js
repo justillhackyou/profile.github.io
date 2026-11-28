@@ -1,4 +1,4 @@
-import { enableOptics } from './optics.js';
+import { enableOptics } from './optics.js?v=dock';
 
 const documentRoot = document.documentElement;
 const themeSwitch = document.querySelector('.theme-switch');
@@ -25,9 +25,12 @@ themeSwitch.addEventListener('click', () => {
 const navigation = document.querySelector('.navigation');
 const navLinks = Array.from(navigation.querySelectorAll('a'));
 const syncActive = id => {
-  for (const link of navLinks) {
-    if (link.hash === '#' + id) link.setAttribute('aria-current', 'location');
-    else link.removeAttribute('aria-current');
+  const index = navLinks.findIndex(link => link.hash === '#' + id);
+  navigation.toggleAttribute('data-active', index >= 0);
+  if (index >= 0) navigation.style.setProperty('--active-index', index);
+  for (const [position, link] of navLinks.entries()) {
+    if (position === index) link.setAttribute('aria-current', 'location');
+    else if (link.hasAttribute('aria-current')) link.removeAttribute('aria-current');
   }
 };
 navigation.addEventListener('click', event => {
@@ -37,16 +40,30 @@ navigation.addEventListener('click', event => {
 syncActive(location.hash.slice(1));
 
 if ('IntersectionObserver' in window) {
+  const sections = navLinks.map(link => document.getElementById(link.hash.slice(1))).reverse();
   const inReadingArea = new Set();
   const readingArea = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (entry.isIntersecting) inReadingArea.add(entry.target);
       else inReadingArea.delete(entry.target);
     }
-    const active = navLinks.find(link => inReadingArea.has(document.getElementById(link.hash.slice(1))));
-    syncActive(active?.hash.slice(1));
-  }, { rootMargin: '-70px 0px -58% 0px' });
-  for (const link of navLinks) readingArea.observe(document.getElementById(link.hash.slice(1)));
+    const active = sections.find(section => inReadingArea.has(section));
+    syncActive(active?.id);
+  }, { rootMargin: '-20% 0px -46% 0px' });
+  for (const section of sections) readingArea.observe(section);
+
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const reveal = new IntersectionObserver(entries => {
+      for (const { isIntersecting, target } of entries) {
+        if (!isIntersecting) continue;
+        target.setAttribute('data-revealed', '');
+        reveal.unobserve(target);
+      }
+    }, { threshold: .18 });
+    for (const element of document.querySelectorAll('.section-heading, .project, .contact-methods')) {
+      reveal.observe(element);
+    }
+  }
 }
 
 const dialog = document.querySelector('#project-dialog');
@@ -219,6 +236,7 @@ async function copyText(text) {
 }
 
 const contactStatus = document.querySelector('#contact-status');
+const copyTimers = new WeakMap();
 async function reportCopy(text, success) {
   let copied = false;
   try {
@@ -228,13 +246,18 @@ async function reportCopy(text, success) {
   }
   contactStatus.textContent = copied ? success : 'Automatic copying is unavailable.';
   if (!copied) window.prompt('Copy this text:', text);
+  return copied;
 }
 
 document.querySelector('#contact').addEventListener('click', async event => {
   const button = event.target.closest('button');
   if (!button) return;
   if (button.dataset.copy) {
-    await reportCopy(button.dataset.copy, 'Copied to clipboard.');
+    if (await reportCopy(button.dataset.copy, 'Copied to clipboard.')) {
+      button.setAttribute('data-copied', '');
+      clearTimeout(copyTimers.get(button));
+      copyTimers.set(button, setTimeout(() => button.removeAttribute('data-copied'), 1800));
+    }
   } else if (button.hasAttribute('data-share')) {
     if (navigator.share) {
       try {
