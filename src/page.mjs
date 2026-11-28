@@ -29,12 +29,6 @@ const navigation = [
   ['profile', 'Profile'], ['contact', 'Contact']
 ];
 
-const optics = `<span class="optics" aria-hidden="true">
-  <svg class="lens-sample" width="100%" height="100%" focusable="false">
-    <image href="./assets/glass-ribbon.webp" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
-  </svg>
-</span>`;
-
 const copyContact = (label, value) => `<button class="icon-action js-only" type="button" data-copy="${html(value)}" aria-label="Copy ${label} contact">${icons.copy}</button>`;
 
 function project(project) {
@@ -92,9 +86,9 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
   <link rel="canonical" href="${site}">
   <link rel="icon" href="./assets/portrait.webp" type="image/webp">
   <link rel="preload" href="./assets/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./assets/site.css?v=type">
+  <link rel="stylesheet" href="./assets/site.css?v=calm">
   <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('hikmatullo-theme')==='light'){document.documentElement.dataset.theme='light';document.querySelector('meta[name="theme-color"]').content='#ebe9e8'}}catch{}</script>
-  <script type="module" src="./assets/site.js?v=live-glass"></script>
+  <script type="module" src="./assets/site.js?v=calm"></script>
 </head>
 <body>
   <picture class="wallpaper" aria-hidden="true">
@@ -105,9 +99,7 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
   <header class="masthead shell">
     <a class="wordmark" href="#top">hikmatullo<span>.dev</span></a>
   </header>
-  <nav class="lens navigation" data-lens="navigation" aria-label="Main navigation">
-    ${optics}
-    <span class="nav-current" aria-hidden="true"></span>
+  <nav class="navigation" aria-label="Main navigation">
     ${navigation.map(([id, label]) => `<a href="#${id}">${icons[id]}<span>${label}</span></a>`).join('')}
     <button class="theme-switch js-only" type="button" aria-label="Light theme" aria-pressed="false">${icons.theme}</button>
   </nav>
@@ -120,7 +112,7 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
         <p class="intro-copy">I build software, Android tools, and hardware systems in Uzbekistan.</p>
       </div>
       <div class="hero-actions">
-        <a class="lens action action-primary" data-lens="work" href="#work">${optics}<span class="action-label">Explore my work</span></a>
+        <a class="action action-primary" href="#work">Explore my work</a>
         ${external(contact.telegramUrl, 'Telegram', 'action action-secondary')}
       </div>
       <div class="hero-base">
@@ -204,7 +196,7 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
                 <div><h3>Telegram</h3><p>${html(contact.telegram)}</p></div>
                 ${copyContact('Telegram', contact.telegram)}
               </div>
-              <a class="lens action action-primary contact-primary" data-lens="telegram" href="${html(contact.telegramUrl)}" target="_blank" rel="noopener noreferrer">${optics}<span class="action-label">Message on Telegram</span></a>
+              <a class="action action-primary contact-primary" href="${html(contact.telegramUrl)}" target="_blank" rel="noopener noreferrer">Message on Telegram</a>
             </div>
             <div class="contact-grid">
               ${channels.map(([label, value, url, icon]) => `<div class="contact-item">

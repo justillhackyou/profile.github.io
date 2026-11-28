@@ -1,5 +1,3 @@
-import { enableOptics } from './optics.js?v=live-glass';
-
 const documentRoot = document.documentElement;
 const themeSwitch = document.querySelector('.theme-switch');
 const themeColor = document.querySelector('meta[name="theme-color"]');
@@ -25,11 +23,8 @@ themeSwitch.addEventListener('click', () => {
 const navigation = document.querySelector('.navigation');
 const navLinks = Array.from(navigation.querySelectorAll('a'));
 const syncActive = id => {
-  const index = navLinks.findIndex(link => link.hash === '#' + id);
-  navigation.toggleAttribute('data-active', index >= 0);
-  if (index >= 0) navigation.style.setProperty('--active-index', index);
-  for (const [position, link] of navLinks.entries()) {
-    if (position === index) link.setAttribute('aria-current', 'location');
+  for (const link of navLinks) {
+    if (link.hash === '#' + id) link.setAttribute('aria-current', 'location');
     else if (link.hasAttribute('aria-current')) link.removeAttribute('aria-current');
   }
 };
@@ -60,7 +55,7 @@ if ('IntersectionObserver' in window) {
         reveal.unobserve(target);
       }
     }, { threshold: .18 });
-    for (const element of document.querySelectorAll('.section-heading, .project, .contact-methods')) {
+    for (const element of document.querySelectorAll('.section-heading, .project')) {
       reveal.observe(element);
     }
   }
@@ -274,4 +269,3 @@ document.querySelector('#contact').addEventListener('click', async event => {
 });
 
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
-enableOptics();
