@@ -1,7 +1,7 @@
 @font-face {
-  font-family: Instrument Serif;
-  src: url("./instrument-serif.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "Cormorant Garamond";
+  src: url("./cormorant-garamond.woff2") format("woff2");
+  font-weight: 500 650;
   font-display: swap;
 }
 
@@ -15,8 +15,8 @@
 :root {
   color-scheme: dark;
   --ink: #f5f3f3;
-  --muted: #c2c0c9;
-  --soft: #aaa7b5;
+  --muted: #cfccd6;
+  --soft: #b9b6c3;
   --accent: #d8ddff;
   --background: #100f14;
   --surface: #121117;
@@ -32,7 +32,7 @@
   --contact-card: #25263cbd;
   --shadow: 0 9px 28px #06050b5e;
   --text-shadow: 0 1px 3px #080911, 0 0 16px #080911cc;
-  --serif: "Instrument Serif", Georgia, serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
   --sans: Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 26px;
   --inset: clamp(22px, 5.5vw, 96px);
@@ -231,9 +231,10 @@ html:not(.js) .navigation { --dock-columns: 5; }
   background: transparent;
   padding: 3px 0;
   color: var(--ink);
-  font-size: .75rem;
-  font-weight: 750;
-  line-height: 1;
+  font-size: .8125rem;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.15;
 }
 .navigation a > svg, .theme-switch svg { width: 21px; height: 21px; }
 .navigation a[aria-current] { color: var(--ink); }
@@ -274,7 +275,7 @@ html:not(.js) .navigation { --dock-columns: 5; }
   color: var(--soft);
   font-size: .75rem;
   font-weight: 750;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -290,12 +291,12 @@ html:not(.js) .navigation { --dock-columns: 5; }
   grid-area: title;
   font-family: var(--serif);
   font-size: clamp(5.8rem, 9.1vw, 9.4rem);
-  font-weight: 400;
-  letter-spacing: -.035em;
-  line-height: .82;
+  font-weight: 560;
+  letter-spacing: -.05em;
+  line-height: .9;
 }
 .hero-intro { grid-area: intro; margin-top: 29px; }
-.profession { font-size: clamp(1rem, 1.6vw, 1.35rem); font-weight: 750; letter-spacing: -.035em; }
+.profession { font-size: clamp(1rem, 1.6vw, 1.35rem); font-weight: 700; letter-spacing: -.02em; }
 .intro-copy { margin-top: 4px; color: var(--muted); }
 .hero-actions { grid-area: actions; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .action {
@@ -372,8 +373,8 @@ html:not(.js) .navigation { --dock-columns: 5; }
 }
 .section-heading h2 {
   margin-top: 6px;
-  font: 400 clamp(3.5rem, 7.3vw, 7.25rem)/.91 var(--serif);
-  letter-spacing: -.04em;
+  font: 570 clamp(3.2rem, 6.9vw, 6.9rem)/.96 var(--serif);
+  letter-spacing: -.045em;
 }
 .section-heading > p { max-width: 34ch; color: var(--muted); }
 .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 38px; }
@@ -386,7 +387,7 @@ html:not(.js) .navigation { --dock-columns: 5; }
   padding: 24px 0 30px;
   border-top: 1px solid var(--line);
 }
-.project h3 { font: 400 clamp(2.2rem, 4vw, 3.5rem)/.94 var(--serif); letter-spacing: -.02em; }
+.project h3 { font: 600 clamp(2.15rem, 3.85vw, 3.45rem)/1.02 var(--serif); letter-spacing: -.035em; }
 .project-copy { max-width: 59ch; color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; padding: 0; list-style: none; }
 .tags li {
@@ -420,8 +421,8 @@ html:not(.js) .navigation { --dock-columns: 5; }
 .columns .tags { margin-top: 12px; }
 .systems-columns .tags { max-width: 460px; }
 .columns h3, .perspective h3, .subheading, .github h3 {
-  font: 400 clamp(1.95rem, 3.25vw, 2.9rem)/1 var(--serif);
-  letter-spacing: -.012em;
+  font: 600 clamp(1.95rem, 3.25vw, 2.9rem)/1.03 var(--serif);
+  letter-spacing: -.03em;
 }
 .specs { margin-top: 16px; }
 .specs > div { display: grid; gap: 2px; padding: 11px 0; border-top: 1px solid var(--line); }
@@ -439,7 +440,7 @@ html:not(.js) .navigation { --dock-columns: 5; }
 .timeline h4 { margin: 8px 0; }
 .perspective { margin-top: 38px; padding-top: 24px; border-top: 1px solid var(--line); }
 .perspective figure { align-self: center; }
-.perspective blockquote { font: 400 clamp(1.5rem, 2.5vw, 2.4rem)/1.23 var(--serif); }
+.perspective blockquote { font: 560 clamp(1.5rem, 2.5vw, 2.4rem)/1.25 var(--serif); }
 .perspective figcaption { margin-top: 11px; color: var(--soft); font-size: .875rem; }
 
 .github {
@@ -501,7 +502,8 @@ html:not(.js) .navigation { --dock-columns: 5; }
 }
 .contact-feature-head > div { flex: 1; min-width: 0; }
 .contact-feature h3 {
-  font: 400 clamp(2.1rem, 4.2vw, 3.7rem)/.92 var(--serif);
+  font: 600 clamp(2.1rem, 4.2vw, 3.7rem)/1 var(--serif);
+  letter-spacing: -.03em;
 }
 .contact-feature p { color: var(--muted); font-size: .875rem; margin-top: 4px; }
 .contact-primary { justify-self: start; min-height: 50px; }
@@ -582,7 +584,7 @@ dialog::backdrop { background: #0c0a12a8; }
 :root:has(dialog[open]) { overflow: hidden; }
 .dialog-bar { display: flex; justify-content: end; padding: 12px 12px 0; }
 .dialog-body { padding: 0 24px 28px; }
-.dialog-body h2 { margin: 6px 0 12px; font: 400 clamp(2.7rem, 8vw, 4.5rem)/.94 var(--serif); }
+.dialog-body h2 { margin: 6px 0 12px; font: 600 clamp(2.7rem, 8vw, 4.5rem)/1 var(--serif); letter-spacing: -.035em; }
 .dialog-body h3 { margin: 21px 0 9px; font-size: 1rem; }
 .dialog-body > p:not(.eyebrow) { color: var(--muted); }
 
@@ -636,7 +638,7 @@ dialog::backdrop { background: #0c0a12a8; }
 }
 @media (max-width: 380px) {
   .hero h1 { font-size: clamp(3.55rem, 16vw, 4rem); }
-  .navigation a { font-size: .6875rem; }
+  .navigation a { font-size: .71875rem; }
   .navigation a > svg, .theme-switch svg { width: 19px; height: 19px; }
   .hero-base { gap: 12px 15px; }
 }

@@ -91,8 +91,8 @@ export function renderPage({ profile, hardware, perspective, projects, skills, t
   <title>${html(profile.name)} | System Developer</title>
   <link rel="canonical" href="${site}">
   <link rel="icon" href="./assets/portrait.webp" type="image/webp">
-  <link rel="preload" href="./assets/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./assets/site.css?v=live-glass">
+  <link rel="preload" href="./assets/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./assets/site.css?v=type">
   <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('hikmatullo-theme')==='light'){document.documentElement.dataset.theme='light';document.querySelector('meta[name="theme-color"]').content='#ebe9e8'}}catch{}</script>
   <script type="module" src="./assets/site.js?v=live-glass"></script>
 </head>
